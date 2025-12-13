@@ -1,7 +1,6 @@
 import './App.css'
 import AboutMe from './components/AboutMe'
 import ConnectWithMe from './components/ConnectWithMe'
-import Contact from './components/Contact'
 import Education from './components/Education'
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -19,7 +18,6 @@ function App() {
       <WorkExp/>
       <Skills/>
       <Education/>
-      <Contact/>
       <ConnectWithMe/>
       <Footer/>
     </div>

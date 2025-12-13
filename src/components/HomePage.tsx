@@ -8,7 +8,7 @@ const HomePage = () => {
 
           {/* Avatar */}
           <img
-            src="./src/assets/profile_pic.jpg"
+            src="assets/profile_pic.jpg"
             alt="Aryan Gupta"
             className="w-36 h-36 md:w-52 md:h-52 object-cover rounded-full
                        shadow-[0_12px_30px_rgba(0,0,0,0.18)]"

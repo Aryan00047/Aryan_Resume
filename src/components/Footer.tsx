@@ -4,17 +4,11 @@ const Footer = () => {
   return (
     <footer className="w-full bg-emerald-300 border-t border-emerald-400/40 mt-10">
       <div className="max-w-4xl mx-auto px-4 py-6">
-
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-
           {/* Left */}
           <div className="text-center md:text-left">
-            <p className="text-sm font-semibold text-zinc-900">
-              Aryan Gupta
-            </p>
-            <p className="text-xs text-zinc-700">
-              Front-End Developer
-            </p>
+            <p className="text-sm font-semibold text-zinc-900">Aryan Gupta</p>
+            <p className="text-xs text-zinc-700">Front-End Developer</p>
           </div>
 
           {/* Center */}
@@ -54,7 +48,6 @@ const Footer = () => {
           <div className="text-xs text-zinc-700">
             © {new Date().getFullYear()} Aryan Gupta
           </div>
-
         </div>
       </div>
     </footer>

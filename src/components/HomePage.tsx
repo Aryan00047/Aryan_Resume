@@ -5,13 +5,12 @@ const HomePage = () => {
     <section className="w-full bg-emerald-100 pt-8">
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex flex-col items-center text-center">
-
           {/* Avatar */}
           <img
             src="assets/profile_pic.jpg"
             alt="Aryan Gupta"
             className="w-36 h-36 md:w-52 md:h-52 object-cover rounded-full
-                       shadow-[0_12px_30px_rgba(0,0,0,0.18)]"
+                       ring-4 ring-emerald-300"
           />
 
           {/* Text */}
@@ -25,15 +24,16 @@ const HomePage = () => {
             </p>
 
             <p className="mt-4 text-zinc-700 leading-relaxed text-base">
-              Software Engineer with 2+ years of experience in React and Angular,
-              focused on building scalable, high-performance, user-centric web applications.
+              Software Engineer with 2+ years of experience in React and
+              Angular, focused on building scalable, high-performance,
+              user-centric web applications.
             </p>
           </div>
-<div className="mt-6 flex items-center gap-4">
-  {/* Primary */}
-  <a
-    href="#work-exp"
-    className="
+          <div className="mt-6 flex items-center gap-4">
+            {/* Primary */}
+            <a
+              href="#work-exp"
+              className="
       inline-flex items-center gap-2
       px-6 py-2.5
       rounded-full
@@ -43,16 +43,16 @@ const HomePage = () => {
       hover:bg-white hover:text-emerald-500 hover:-translate-y-0.5
       transition-all
     "
-  >
-    Work Experience
-    <FaArrowDown className="text-sm" />
-  </a>
+            >
+              Work Experience
+              <FaArrowDown className="text-sm" />
+            </a>
 
-  {/* Secondary */}
-  <a
-    href="/Aryan_Resume.pdf"
-    download
-    className="
+            {/* Secondary */}
+            <a
+              href="/Aryan_Resume.pdf"
+              download
+              className="
       inline-flex items-center gap-2
       px-6 py-2.5
       rounded-full
@@ -63,12 +63,11 @@ const HomePage = () => {
       hover:bg-emerald-500 hover:text-white hover:-translate-y-0.5
       transition-all
     "
-  >
-    Download Resume
-    <FaFileDownload/>
-  </a>
-</div>
-
+            >
+              Download Resume
+              <FaFileDownload />
+            </a>
+          </div>
         </div>
       </div>
     </section>

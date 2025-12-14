@@ -9,7 +9,6 @@ const WorkExp = () => {
 
       <Card>
         <div className="p-6 space-y-8">
-
           {/* Company */}
           <div>
             <h3 className="text-xl font-semibold text-zinc-900">
@@ -31,16 +30,17 @@ const WorkExp = () => {
                 validation, and UX approval one month ahead of schedule.
               </li>
               <li>
-                Migrated the application from Angular 16 to Angular 19, improving
-                performance, maintainability, and framework consistency.
+                Migrated the application from Angular 16 to Angular 19,
+                improving performance, maintainability, and framework
+                consistency.
               </li>
               <li>
                 Designed a dynamic config-driven component system, consolidating
                 5 separate components into one reusable architecture.
               </li>
               <li>
-                Collaborated with product managers, QA, and cross-functional teams
-                to ship stable, healthcare-compliant releases.
+                Collaborated with product managers, QA, and cross-functional
+                teams to ship stable, healthcare-compliant releases.
               </li>
             </ul>
           </div>
@@ -65,7 +65,6 @@ const WorkExp = () => {
               </li>
             </ul>
           </div>
-
         </div>
       </Card>
     </section>
@@ -73,4 +72,3 @@ const WorkExp = () => {
 };
 
 export default WorkExp;
-

@@ -12,8 +12,10 @@ const Education = () => {
   <div className="p-6 space-y-2">
 
     <div className="flex items-center gap-4">
-      <div className="w-10 h-10 flex items-center justify-center rounded-full bg-emerald-100">
+      <div className="w-10 h-10 flex items-center justify-center rounded-full bg-emerald-100 hover:cursor-pointer hover:shadow-sm hover:shadow-emerald-400">
+        <a href="https://www.chitkara.edu.in/">
         <FaGraduationCap className="text-emerald-600 text-lg" />
+        </a>
       </div>
 
       <div>

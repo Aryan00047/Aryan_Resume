@@ -17,9 +17,9 @@ const Skills = () => {
               Languages
             </h4>
             <div className="flex gap-4 flex-wrap">
-              <SkillIcon src="assets/javascript.svg" label="JavaScript" />
-              <SkillIcon src="assets/typescript.svg" label="TypeScript" />
-              <SkillIcon src="assets/rxjs-1.svg" label="RxJS" />
+              <SkillIcon src="assets/javascript.svg" label="JavaScript" link="https://developer.mozilla.org/en-US/docs/Web/JavaScript" />
+              <SkillIcon src="assets/typescript.svg" label="TypeScript" link="https://www.typescriptlang.org/"/>
+              <SkillIcon src="assets/rxjs-1.svg" label="RxJS" link="https://rxjs.dev/"/>
             </div>
           </div>
         </Card>
@@ -31,9 +31,9 @@ const Skills = () => {
               Frameworks
             </h4>
             <div className="flex gap-4 flex-wrap">
-              <SkillIcon src="assets/react.svg" label="React" />
-              <SkillIcon src="assets/redux.svg" label="Redux" />
-              <SkillIcon src="assets/angular.svg" label="Angular" />
+              <SkillIcon src="assets/react.svg" label="React" link="https://react.dev/"/>
+              <SkillIcon src="assets/redux.svg" label="Redux" link="https://redux.js.org/"/>
+              <SkillIcon src="assets/angular.svg" label="Angular" link="https://angular.dev/"/>
             </div>
           </div>
         </Card>
@@ -45,8 +45,8 @@ const Skills = () => {
               Styling
             </h4>
             <div className="flex gap-4 flex-wrap">
-              <SkillIcon src="assets/tailwindcss.svg" label="Tailwind CSS" />
-              <SkillIcon src="assets/bootstrap.svg" label="Bootstrap" />
+              <SkillIcon src="assets/tailwindcss.svg" label="Tailwind CSS" link="https://tailwindcss.com/"/>
+              <SkillIcon src="assets/bootstrap.svg" label="Bootstrap" link="https://getbootstrap.com/"/>
             </div>
           </div>
         </Card>
@@ -58,9 +58,9 @@ const Skills = () => {
               Tools
             </h4>
             <div className="flex gap-4 flex-wrap">
-              <SkillIcon src="assets/git.svg" label="Git" />
-              <SkillIcon src="assets/vscode.svg" label="VS Code" />
-              <SkillIcon src="assets/postman.svg" label="Postman" />
+              <SkillIcon src="assets/git.svg" label="Git" link="https://git-scm.com/"/>
+              <SkillIcon src="assets/vscode.svg" label="VS Code" link="https://code.visualstudio.com/"/>
+              <SkillIcon src="assets/postman.svg" label="Postman" link="https://www.postman.com/"/>
             </div>
           </div>
         </Card>

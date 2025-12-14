@@ -12,10 +12,15 @@ const AboutMe = () => {
       <Card>
         {/* Intro */}
         <p className="p-6 text-zinc-700 leading-relaxed">
-          I'm a Front-End Developer with 2+ years of experience, currently working
-          at{" "}
+          I'm a Front-End Developer with 2+ years of experience, currently
+          working at{" "}
           <span className="font-semibold text-zinc-900">
-           <a className="hover:underline" href="https://www.happiestminds.com/">Happiest Minds Technologies</a> 
+            <a
+              className="hover:underline"
+              href="https://www.happiestminds.com/"
+            >
+              Happiest Minds Technologies
+            </a>
           </span>{" "}
           as a Software Engineer. I specialize in building scalable, reusable UI
           components with a strong focus on performance, maintainability, and

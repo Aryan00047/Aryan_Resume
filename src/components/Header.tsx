@@ -18,7 +18,6 @@ const Header = () => {
   return (
     <header className="w-full bg-emerald-300 border-b border-emerald-200 sticky top-0 z-50">
       <div className="flex items-center justify-between px-6 py-4">
-
         {/* Logo */}
         <div className="text-2xl font-bold tracking-tight text-zinc-900">
           AG
@@ -43,7 +42,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button
           className="sm:hidden text-zinc-900 text-xl hover:cursor-pointer"
-          onClick={() => setOpen(prev => !prev)}
+          onClick={() => setOpen((prev) => !prev)}
           aria-label="Toggle menu"
         >
           {open ? <FaTimes /> : <FaBars />}
@@ -53,13 +52,13 @@ const Header = () => {
       {/* Mobile Menu */}
       {open && (
         <div className="sm:hidden bg-emerald-300 border-t border-emerald-200">
-          <nav className="flex flex-col px-6 py-4 gap-4 text-md font-semibold text-zinc-900">
+          <nav className="flex flex-col px-6 py-4 gap-4 text-sm font-semibold text-zinc-900">
             {[
               { href: "#about-me", label: "About" },
               { href: "#work-exp", label: "Experience" },
               { href: "#skills", label: "Skills" },
               { href: "#contact-me", label: "Contact" },
-            ].map(item => (
+            ].map((item) => (
               <a
                 key={item.href}
                 href={item.href}

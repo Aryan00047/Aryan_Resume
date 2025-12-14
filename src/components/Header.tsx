@@ -1,39 +1,81 @@
-  import { FaLinkedin, FaGithub, FaEnvelope, FaFilePdf } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
-  const Header = () => {
-    return (
-      <header className="w-full bg-emerald-300 border-b border-emerald-200 sticky top-0 z-50 ">
-        <div className="flex items-center justify-between px-6 py-4">
-          
-          {/* Logo */}
-          <div className="text-2xl font-bold tracking-tight text-zinc-900">
-            AG  
-          </div>
+const Header = () => {
+  const [open, setOpen] = useState(false);
 
-          {/* Nav Icons */}
-          <nav className="flex gap-6 text-zinc-700 text-xl">
-            <a href="https://www.linkedin.com/in/agupta2001/" className="hover:text-zinc-100 transition-colors duration-200">
-              <FaLinkedin />
-            </a>
-            <a href="https://github.com/Aryan00047" className="hover:text-zinc-100 transition-colors duration-200">
-              <FaGithub />
-            </a>
-            <a href="mailto:aryan2k1.gupta@gmail.com" className="hover:text-zinc-100  transition-colors duration-200">
-              <FaEnvelope />
-            </a>
-            <a
-              href="/Aryan_Resume.pdf"
-              download
-              aria-label="Download Resume"
-              className="hover:text-zinc-100 transition-colors duration-200"
-            >
-              <FaFilePdf />
-            </a>
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 640) {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <header className="w-full bg-emerald-300 border-b border-emerald-200 sticky top-0 z-50">
+      <div className="flex items-center justify-between px-6 py-4">
+
+        {/* Logo */}
+        <div className="text-2xl font-bold tracking-tight text-zinc-900">
+          AG
+        </div>
+
+        {/* Desktop Nav */}
+        <nav className="hidden sm:flex gap-6 text-md font-semibold text-zinc-900">
+          <a href="#about-me" className="hover:text-zinc-100 transition">
+            About
+          </a>
+          <a href="#work-exp" className="hover:text-zinc-100 transition">
+            Experience
+          </a>
+          <a href="#skills" className="hover:text-zinc-100 transition">
+            Skills
+          </a>
+          <a href="#contact-me" className="hover:text-zinc-100 transition">
+            Contact
+          </a>
+        </nav>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="sm:hidden text-zinc-900 text-xl hover:cursor-pointer"
+          onClick={() => setOpen(prev => !prev)}
+          aria-label="Toggle menu"
+        >
+          {open ? <FaTimes /> : <FaBars />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {open && (
+        <div className="sm:hidden bg-emerald-300 border-t border-emerald-200">
+          <nav className="flex flex-col px-6 py-4 gap-4 text-md font-semibold text-zinc-900">
+            {[
+              { href: "#about-me", label: "About" },
+              { href: "#work-exp", label: "Experience" },
+              { href: "#skills", label: "Skills" },
+              { href: "#contact-me", label: "Contact" },
+            ].map(item => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="self-start"
+              >
+                <span className="inline-block hover:text-zinc-100 transition">
+                  {item.label}
+                </span>
+              </a>
+            ))}
           </nav>
+        </div>
+      )}
+    </header>
+  );
+};
 
-        </div>  
-      </header>
-    );
-  };
-
-  export default Header;
+export default Header;

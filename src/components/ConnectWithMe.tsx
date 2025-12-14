@@ -3,7 +3,7 @@ import Card from "./Card";
 
 const ConnectWithMe = () => {
   return (
-<section className="max-w-4xl mx-auto px-4 pt-8">
+<section id="contact-me" className="max-w-4xl mx-auto px-4 pt-8 scroll-mt-24">
       <h2 className="text-3xl font-bold tracking-tight text-zinc-900 text-center mb-2">
         Let’s Connect
       </h2>

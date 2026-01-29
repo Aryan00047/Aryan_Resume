@@ -2,20 +2,20 @@ import Card from "./Card";
 
 const WorkExp = () => {
   return (
-    <section id="work-exp" className="max-w-4xl mx-auto px-4 pt-8 scroll-mt-24">
-      <h2 className="text-3xl font-bold tracking-tight text-zinc-900 text-center mb-2">
+    <section id="work-exp" className="max-w-4xl mx-auto px-4 pt-4 sm:pt-8 scroll-mt-24">
+      <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 text-center mb-1 sm:mb-2">
         Work Experience
       </h2>
 
       <Card>
-        <div className="p-6 space-y-8">
+        <div className="p-4 sm:p-6 space-y-4 sm:space-y-8">
           {/* Company */}
           <div>
-            <h3 className="text-xl font-semibold text-zinc-900">
+            <h3 className="text-base sm:text-xl font-semibold text-zinc-900">
               Happiest Minds Technologies Ltd.
             </h3>
-            <p className="text-sm text-zinc-500">
-              Software Engineer • Aug 2023 – Present
+            <p className="text-xs sm:text-sm text-zinc-500">
+              Software Engineer • Aug 2023 – December,2025
             </p>
           </div>
 
@@ -24,7 +24,7 @@ const WorkExp = () => {
             <p className="font-semibold text-zinc-900">
               Mercury Ignite (WebMD) — Healthcare Platform
             </p>
-            <ul className="mt-2 space-y-2 text-zinc-700 text-sm leading-relaxed list-disc list-inside">
+            <ul className="mt-2 space-y-2 text-zinc-700 text-xs sm:text-sm leading-relaxed list-disc list-inside">
               <li>
                 Delivered a full UI module with complete functionality, QA
                 validation, and UX approval one month ahead of schedule.
@@ -50,7 +50,7 @@ const WorkExp = () => {
             <p className="font-semibold text-zinc-900">
               Job Management Portal — Full Stack POC
             </p>
-            <ul className="mt-2 space-y-2 text-zinc-700 text-sm leading-relaxed list-disc list-inside">
+            <ul className="mt-2 space-y-2 text-zinc-700 text-xs sm:text-sm leading-relaxed list-disc list-inside">
               <li>
                 Independently designed and developed a full-stack job management
                 system handling job listings and candidate applications.

@@ -2,17 +2,17 @@ import { FaLinkedin, FaGithub, FaEnvelope, FaFilePdf } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-emerald-300 border-t border-emerald-400/40 mt-10">
-      <div className="max-w-4xl mx-auto px-4 py-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+    <footer className="w-full bg-emerald-300 border-t border-emerald-400/40 mt-5 sm:mt-10">
+      <div className="max-w-2xl sm:max-w-4xl mx-auto px-2 sm:px-4 py-4 sm:py-6">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-2 sm:gap-4">
           {/* Left */}
           <div className="text-center md:text-left">
-            <p className="text-sm font-semibold text-zinc-900">Aryan Gupta</p>
+            <p className="text-base sm:text-sm font-semibold text-zinc-900">Aryan Gupta</p>
             <p className="text-xs text-zinc-700">Front-End Developer</p>
           </div>
 
           {/* Center */}
-          <div className="flex gap-5 text-zinc-700 text-xl">
+          <div className="flex gap-3 sm:gap-5 text-zinc-700 text-2xl sm:text-xl">
             <a
               href="https://www.linkedin.com/in/agupta2001/"
               aria-label="LinkedIn"

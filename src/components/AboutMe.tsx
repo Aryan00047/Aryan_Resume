@@ -4,16 +4,16 @@ import Card from "./Card";
 
 const AboutMe = () => {
   return (
-    <section id="about-me" className="max-w-4xl mx-auto px-4 pt-8 scroll-mt-24">
-      <h2 className="text-3xl font-bold tracking-tight text-zinc-900 text-center mb-2">
+    <section id="about-me" className="max-w-4xl mx-auto px-4 pt-4 sm:pt-8 scroll-mt-24">
+      <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 text-center mb-2">
         About Me
       </h2>
 
       <Card>
         {/* Intro */}
-        <p className="p-6 text-zinc-700 leading-relaxed">
-          I'm a Front-End Developer with 2+ years of experience, currently
-          working at{" "}
+        <p className="p-4 sm:p-6 text-zinc-700 text-sm sm:text-base leading-relaxed">
+          I'm a Front-End Developer with 2.5 years of experience,
+          worked at{" "}
           <span className="font-semibold text-zinc-900">
             <a
               className="hover:underline"
@@ -29,7 +29,7 @@ const AboutMe = () => {
 
         {/* Highlights */}
         <div className="grid grid-cols-1 md:grid-cols-3 border-t border-slate-200">
-          <div className="p-6 text-center">
+          <div className="p-3 sm:p-6 text-center">
             <FaCode className="mx-auto text-emerald-500 text-xl mb-3" />
             <h3 className="font-semibold text-zinc-900">Clean Code</h3>
             <p className="mt-2 text-sm text-zinc-600">

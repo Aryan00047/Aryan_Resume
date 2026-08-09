@@ -222,7 +222,22 @@
       "location": "Punjab, India"
     }
   ],
-  "certifications": [],
+  "certifications": [
+    {
+      "name": "Namaste Javascript",
+      "issuer": "NamasteDev.com",
+      "issued": "2026-04-27",
+      "credentialId": "8210A62BB283AF2731BD683584B",
+      "url": "https://namastedev.com/aryan2k1.gupta/certificates/namaste-javascript"
+    },
+    {
+      "name": "Namaste React",
+      "issuer": "NamasteDev.com",
+      "issued": "2026-06-05",
+      "credentialId": "8210A62BB283AF2731BD68351D5",
+      "url": "https://namastedev.com/aryan2k1.gupta/certificates/namaste-react"
+    }
+  ],
   "activity": [
     {
       "provider": "github",

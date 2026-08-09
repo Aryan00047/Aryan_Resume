@@ -1,72 +1,63 @@
-import Card from "./Card";
+import { content, externalUrl } from "../content";
+import type { Experience } from "../data/schema";
+import { useReveal } from "../hooks/useReveal";
+import Education from "./Education";
+
+const Role = ({ role }: { role: Experience }) => {
+  const row = useReveal();
+
+  return (
+    <div className="reveal xp-row" ref={row}>
+      <div className="xp-aside">
+        <div className="xp-dates">
+          {role.start} — {role.end}
+        </div>
+        <div className="xp-org">
+          {role.orgUrl ? (
+            <a href={externalUrl(role.orgUrl)} target="_blank" rel="noopener noreferrer">
+              {role.org}
+            </a>
+          ) : (
+            role.org
+          )}
+        </div>
+        {role.location && <div className="xp-place">{role.location}</div>}
+        {role.role && <span className="tag tag-accent">{role.role}</span>}
+      </div>
+
+      <div className="xp-body">
+        {role.client && <div className="xp-client">{role.client}</div>}
+        <div className="xp-list">
+          {role.bullets.map((bullet, i) => (
+            <div className="xp-item" key={i}>
+              <div className="xp-metric">{bullet.metric}</div>
+              <p>{bullet.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const WorkExp = () => {
+  const heading = useReveal();
+
+  if (!content.experience.length && !content.education.length) return null;
+
   return (
-    <section id="work-exp" className="max-w-4xl mx-auto px-4 pt-4 sm:pt-8 scroll-mt-24">
-      <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 text-center mb-1 sm:mb-2">
-        Work Experience
-      </h2>
+    <section id="experience" className="section shell">
+      <div className="reveal rule" ref={heading}>
+        <h6>Experience</h6>
+        <div className="rule-line" />
+      </div>
 
-      <Card>
-        <div className="p-4 sm:p-6 space-y-4 sm:space-y-8">
-          {/* Company */}
-          <div>
-            <h3 className="text-base sm:text-xl font-semibold text-zinc-900">
-              Happiest Minds Technologies Ltd.
-            </h3>
-            <p className="text-xs sm:text-sm text-zinc-500">
-              Software Engineer • Aug 2023 – December,2025
-            </p>
-          </div>
-
-          {/* Project 1 */}
-          <div>
-            <p className="font-semibold text-zinc-900">
-              Mercury Ignite (WebMD) — Healthcare Platform
-            </p>
-            <ul className="mt-2 space-y-2 text-zinc-700 text-xs sm:text-sm leading-relaxed list-disc list-inside">
-              <li>
-                Delivered a full UI module with complete functionality, QA
-                validation, and UX approval one month ahead of schedule.
-              </li>
-              <li>
-                Migrated the application from Angular 16 to Angular 19,
-                improving performance, maintainability, and framework
-                consistency.
-              </li>
-              <li>
-                Designed a dynamic config-driven component system, consolidating
-                5 separate components into one reusable architecture.
-              </li>
-              <li>
-                Collaborated with product managers, QA, and cross-functional
-                teams to ship stable, healthcare-compliant releases.
-              </li>
-            </ul>
-          </div>
-
-          {/* Project 2 */}
-          <div>
-            <p className="font-semibold text-zinc-900">
-              Job Management Portal — Full Stack POC
-            </p>
-            <ul className="mt-2 space-y-2 text-zinc-700 text-xs sm:text-sm leading-relaxed list-disc list-inside">
-              <li>
-                Independently designed and developed a full-stack job management
-                system handling job listings and candidate applications.
-              </li>
-              <li>
-                Built backend services using Node.js, Express.js, and MongoDB,
-                supporting real-time CRUD operations with strong data integrity.
-              </li>
-              <li>
-                Delivered a production-ready POC with clean architecture and
-                scalability in mind.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </Card>
+      <div className="xp-stack">
+        {content.experience.map((role, i) => (
+          <Role key={`${role.org}-${i}`} role={role} />
+        ))}
+        <Education />
+      </div>
     </section>
   );
 };

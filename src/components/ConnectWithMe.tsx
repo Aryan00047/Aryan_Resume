@@ -1,78 +1,85 @@
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
-import Card from "./Card";
+import { useState, type FormEvent } from "react";
+import { content, externalUrl } from "../content";
+import { useReveal } from "../hooks/useReveal";
 
 const ConnectWithMe = () => {
+  const card = useReveal();
+  const [sent, setSent] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const { contact, links, profile } = content;
+
+  // No backend here, so the form hands off to the visitor's mail client with
+  // everything prefilled. Swap this for a POST once a form service is wired up.
+  const onSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Portfolio enquiry — ${form.name || "Hello"}`);
+    const body = encodeURIComponent(
+      `${form.message}\n\n—\n${form.name}${form.email ? `\n${form.email}` : ""}`,
+    );
+    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+    setSent(true);
+  };
+
   return (
-    <section
-      id="contact-me"
-      className="max-w-4xl mx-auto px-4 pt-4 sm:pt-8 scroll-mt-24"
-    >
-      <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 text-center mb-1 sm:mb-2">
-        Let’s Connect
-      </h2>
+    <section id="contact" className="section contact shell">
+      <div className="reveal contact-card" ref={card}>
+        <div className="contact-grid">
+          <div>
+            <h2>{contact.heading}</h2>
+            <p>{contact.body}</p>
+            <div className="contact-links">
+              {profile.email && <a href={`mailto:${profile.email}`}>{profile.email}</a>}
+              {links.linkedin && (
+                <a href={externalUrl(links.linkedin)} target="_blank" rel="noopener noreferrer">
+                  LinkedIn ↗
+                </a>
+              )}
+              {links.github && (
+                <a href={externalUrl(links.github)} target="_blank" rel="noopener noreferrer">
+                  GitHub ↗
+                </a>
+              )}
+              {profile.phone && <span>{profile.phone}</span>}
+            </div>
+          </div>
 
-      <p className="text-sm sm:text-base text-center text-zinc-600 mb-1 sm:mb-2 max-w-xl mx-auto ">
-        Open to frontend roles, freelance work, and meaningful collaborations.
-        Feel free to reach out.
-      </p>
-
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4">
-        {/* Email */}
-        <Card>
-          <a
-            href="mailto:aryan2k1.gupta@gmail.com"
-            className="p-3 sm:p-5 flex items-center gap-2 sm:gap-4
-                        transition rounded-2xl hover:cursor-pointer hover:shadow-sm hover:shadow-emerald-400"
-          >
-            <div className="w-14 h-14 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-emerald-100">
-              <FaEnvelope className="text-emerald-600" />
+          <form className="contact-form" onSubmit={onSubmit}>
+            <div className="field">
+              <label htmlFor="contact-name">Name</label>
+              <input
+                id="contact-name"
+                className="input"
+                placeholder="Your name"
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+              />
             </div>
-            <div>
-              <p className="text-sm font-semibold text-zinc-900">Email</p>
-              <p className="text-xs text-zinc-600">aryan2k1.gupta@gmail.com</p>
+            <div className="field">
+              <label htmlFor="contact-email">Email</label>
+              <input
+                id="contact-email"
+                className="input"
+                type="email"
+                placeholder="you@company.com"
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+              />
             </div>
-          </a>
-        </Card>
-
-        {/* LinkedIn */}
-        <Card>
-          <a
-            href="https://www.linkedin.com/in/agupta2001/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 sm:p-5 flex items-center gap-4
-                        transition rounded-2xl hover:cursor-pointer hover:shadow-sm hover:shadow-emerald-400"
-          >
-            <div className="w-14 h-14 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-emerald-100">
-              <FaLinkedin className="text-emerald-600" />
+            <div className="field">
+              <label htmlFor="contact-message">What are you building?</label>
+              <textarea
+                id="contact-message"
+                className="input"
+                placeholder="A sentence or two is plenty."
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+              />
             </div>
-            <div>
-              <p className="text-sm font-semibold text-zinc-900">LinkedIn</p>
-              <p className="text-xs text-zinc-600">
-                linkedin.com/in/agupta2001
-              </p>
-            </div>
-          </a>
-        </Card>
-
-        {/* GitHub */}
-        <Card>
-          <a
-            href="https://github.com/Aryan00047"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 sm:p-5 flex items-center gap-4
-                        transition rounded-2xl hover:cursor-pointer hover:shadow-sm hover:shadow-emerald-400"
-          >
-            <div className="w-14 h-14 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-emerald-100">
-              <FaGithub className="text-emerald-600" />
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-zinc-900">GitHub</p>
-              <p className="text-xs text-zinc-600">github.com/Aryan00047</p>
-            </div>
-          </a>
-        </Card>
+            <button className="btn btn-primary btn-block" type="submit" style={{ padding: 11 }}>
+              {sent ? "Thanks — I'll reply soon" : "Send message"}
+            </button>
+          </form>
+        </div>
       </div>
     </section>
   );

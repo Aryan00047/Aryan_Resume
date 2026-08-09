@@ -1,0 +1,238 @@
+{
+  "profile": {
+    "fullName": "Aryan Gupta",
+    "wordmark": "aryan.gupta",
+    "role": "Frontend Engineer",
+    "availability": "Open to work — Frontend / Full Stack",
+    "years": "2.5",
+    "headline": "I own the whole module —",
+    "headlineAccent": "not just the component.",
+    "lede": "Frontend engineer, 2.5 years in React, Angular and TypeScript inside a regulated healthcare platform — shipping UI modules end to end through development, QA and release, and writing the Node/Express/MongoDB behind them when the work needs it.",
+    "locations": "India — open to Bengaluru · Pune · Noida · Gurgaon · Hyderabad",
+    "email": "aryan2k1.gupta@gmail.com",
+    "phone": "+91 86998 28447",
+    "portrait": "/assets/profile_pic.jpg",
+    "portraitCaption": "Aryan Gupta, Bengaluru"
+  },
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/agupta2001/",
+    "github": "https://github.com/Aryan00047",
+    "resume": "/Resume_Aryan.pdf"
+  },
+  "about": {
+    "lede": "I started as the person who took the tickets nobody wanted — the module with the tangled requirements, the migration everyone was postponing — and found that owning the messy half is where the work gets interesting.",
+    "body": "Two and a half years at Happiest Minds on a WebMD healthcare platform taught me to ship carefully: compliance reviews, QA triage of up to 20 defects a release, an Angular v16→v19 migration across 15+ modules with zero post-release rollbacks. On my own time I build products end to end, because the fastest way to understand a system is to own all of it."
+  },
+  "contact": {
+    "heading": "Let's talk about the role.",
+    "body": "Open to frontend and full-stack positions, and to freelance builds. Tell me what you're shipping and I'll tell you honestly whether I'm the right hire."
+  },
+  "bootLines": [
+    {
+      "text": "resolving experience…",
+      "tail": "2.5 yrs ✓"
+    },
+    {
+      "text": "mounting production modules…",
+      "tail": "15+ ✓"
+    },
+    {
+      "text": "running migration v16 → v19…",
+      "tail": "0 rollbacks ✓"
+    },
+    {
+      "text": "building projects…",
+      "tail": "done ✓"
+    },
+    {
+      "text": "status",
+      "tail": "open to work"
+    }
+  ],
+  "codingProfiles": [
+    {
+      "name": "TakeUForward",
+      "handle": "",
+      "url": "takeuforward.org/profile/Aryan2k1",
+      "stat": "",
+      "note": ""
+    },
+    {
+      "name": "LeetCode",
+      "handle": "",
+      "url": "",
+      "stat": "",
+      "note": ""
+    },
+    {
+      "name": "GeeksforGeeks",
+      "handle": "",
+      "url": "",
+      "stat": "",
+      "note": ""
+    },
+    {
+      "name": "Codeforces",
+      "handle": "",
+      "url": "",
+      "stat": "",
+      "note": ""
+    },
+    {
+      "name": "Github",
+      "handle": "",
+      "url": "https://github.com/Aryan00047",
+      "stat": "",
+      "note": ""
+    }
+  ],
+  "skills": [
+    {
+      "label": "Languages",
+      "items": [
+        "JavaScript",
+        "TypeScript"
+      ]
+    },
+    {
+      "label": "Frontend",
+      "items": [
+        "React",
+        "Redux",
+        "Angular v16→v19",
+        "RxJS",
+        "ngrx",
+        "Tailwind",
+        "Bootstrap"
+      ]
+    },
+    {
+      "label": "Backend",
+      "items": [
+        "Node.js",
+        "Express.js",
+        "REST APIs"
+      ]
+    },
+    {
+      "label": "Databases",
+      "items": [
+        "MongoDB",
+        "SQL"
+      ]
+    },
+    {
+      "label": "Testing",
+      "items": [
+        "Karma",
+        "Jasmine",
+        "React Testing Library"
+      ]
+    },
+    {
+      "label": "Practices",
+      "items": [
+        "Git",
+        "CI/CD",
+        "Component-driven architecture",
+        "Claude Code",
+        "Copilot",
+        "Postman"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Expense Tracker",
+      "eyebrow": "Flagship · Live",
+      "description": "Drop in a bank PDF or CSV and get analytics you can actually read. Built because reconciling a statement meant scrolling a thousand rows to answer one question.",
+      "tags": [
+        "React",
+        "TypeScript",
+        "Node",
+        "PDF / CSV parsing"
+      ],
+      "liveUrl": "https://deluxe-sfogliatella-71fdc0.netlify.app/",
+      "caseStudyUrl": "",
+      "featured": true,
+      "beats": [
+        {
+          "num": "01",
+          "title": "A statement is not information",
+          "body": "Bank exports arrive as a thousand undifferentiated rows. Answering “where did the month go” meant reading all of them — so the first job was turning a document into a question you can ask."
+        },
+        {
+          "num": "02",
+          "title": "Every bank formats it differently",
+          "body": "PDFs with merged columns, CSVs with shifting headers, dates in four dialects. The parser normalises layouts into one transaction shape and flags what it could not read instead of silently dropping it."
+        },
+        {
+          "num": "03",
+          "title": "What I would build next",
+          "body": "Recurring-charge detection, a budget you set once and get nudged against, and multi-account merging so household spend reads as one story rather than three exports."
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "org": "Happiest Minds",
+      "orgUrl": "https://www.happiestminds.com/",
+      "role": "Frontend Engineer",
+      "location": "Bengaluru, India",
+      "start": "Aug 2023",
+      "end": "Dec 2025",
+      "client": "Client — Mercury Ignite (WebMD) · Healthcare platform",
+      "bullets": [
+        {
+          "metric": "2 wks",
+          "text": "Owned a complete UI module end to end — development, QA fixes and UX validation — shipping two weeks ahead of schedule."
+        },
+        {
+          "metric": "15+",
+          "text": "Led the migration of a production Angular application from v16 to v19 across 15+ modules, resolving breaking changes with zero post-release rollbacks."
+        },
+        {
+          "metric": "5→1",
+          "text": "Designed a config-driven dynamic component architecture that consolidated five components into one, cutting duplicate code 30% and saving ~10 hrs/week of maintenance."
+        },
+        {
+          "metric": "20/rel",
+          "text": "Translated product requirements into technical designs and partnered with QA to triage and close up to 20 defects per release in a compliance-driven environment."
+        },
+        {
+          "metric": "10",
+          "text": "Contributed to architectural refactoring across 10 shared modules, improving scalability and maintainability."
+        },
+        {
+          "metric": "POC",
+          "text": "Built a full-stack Job Management Portal solo as a self-driven internal proof of concept — Node, Express and MongoDB REST services behind a modular frontend."
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "org": "Chitkara University",
+      "orgUrl": "https://www.chitkara.edu.in/",
+      "degree": "B.E. Computer Science & Engineering",
+      "detail": "9.89 CGPA",
+      "start": "Aug 2019",
+      "end": "Jun 2023",
+      "location": "Punjab, India"
+    }
+  ],
+  "certifications": [],
+  "activity": [
+    {
+      "provider": "github",
+      "username": "Aryan00047",
+      "snapshot": {
+        "total": 73,
+        "start": "2025-08-10",
+        "levels": "00000000000000000000004441241001000041100011000021000000000000000000001022130000000000000000000000000000000000000000000000000000000000000000000000000003400000000000010000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200020000000000000000000000000000000000000000000000000000001",
+        "updatedAt": "2026-08-09"
+      }
+    }
+  ]
+}

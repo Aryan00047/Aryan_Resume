@@ -1,42 +1,43 @@
-import { FaGraduationCap } from "react-icons/fa";
-import Card from "./Card";
+import { content, externalUrl } from "../content";
+import type { Education as EducationEntry } from "../data/schema";
+import { useReveal } from "../hooks/useReveal";
 
-const Education = () => {
+const Row = ({ entry }: { entry: EducationEntry }) => {
+  const row = useReveal();
+
   return (
-    <section className="max-w-4xl mx-auto px-4 pt-4 sm:pt-8">
-      <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 text-center mb-1 sm:mb-2">
-        Education
-      </h2>
-
-    <Card>
-  <div className="p-4 sm:p-6 space-y-2">
-
-    <div className="flex items-center gap-4">
-      <div className="w-10 h-10 flex items-center justify-center rounded-full bg-emerald-100 hover:cursor-pointer hover:shadow-sm hover:shadow-emerald-400">
-        <a href="https://www.chitkara.edu.in/">
-        <FaGraduationCap className="text-emerald-600 text-xl sm:text-lg" />
-        </a>
+    <div className="reveal xp-row" ref={row}>
+      <div>
+        <div className="xp-dates">
+          {entry.start} — {entry.end}
+        </div>
+        <div className="xp-org">
+          {entry.orgUrl ? (
+            <a href={externalUrl(entry.orgUrl)} target="_blank" rel="noopener noreferrer">
+              {entry.org}
+            </a>
+          ) : (
+            entry.org
+          )}
+        </div>
+        {entry.location && <div className="xp-place">{entry.location}</div>}
       </div>
 
-      <div>
-        <h3 className="text-base sm:text-lg font-semibold text-zinc-900">
-          Chitkara University
-        </h3>
-        <p className="text-xs sm:text-sm text-zinc-700">
-          Bachelor of Engineering — Computer Science
-        </p>
+      <div className="xp-body edu-body">
+        <div className="edu-degree">{entry.degree}</div>
+        {entry.detail && <div className="edu-cgpa">{entry.detail}</div>}
       </div>
     </div>
-
-    <p className="text-xs sm:text-sm text-zinc-500 pl-14">
-      2019 – 2023 • CGPA 9.89
-    </p>
-
-  </div>
-</Card>
-
-    </section>
   );
 };
+
+/** Education renders as further rows of the Experience section, per the design. */
+const Education = () => (
+  <>
+    {content.education.map((entry, i) => (
+      <Row key={`${entry.org}-${i}`} entry={entry} />
+    ))}
+  </>
+);
 
 export default Education;

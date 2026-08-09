@@ -1,59 +1,60 @@
-import { FaCode, FaRocket } from "react-icons/fa";
-import { FaUserGroup } from "react-icons/fa6";
-import Card from "./Card";
+import { content, externalUrl } from "../content";
+import { useReveal } from "../hooks/useReveal";
 
 const AboutMe = () => {
+  const heading = useReveal();
+  const grid = useReveal();
+  const { about, links, profile } = content;
+
   return (
-    <section id="about-me" className="max-w-4xl mx-auto px-4 pt-4 sm:pt-8 scroll-mt-24">
-      <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 text-center mb-2">
-        About Me
-      </h2>
+    <section id="about" className="section shell">
+      <div className="reveal rule" ref={heading}>
+        <h6>About</h6>
+        <div className="rule-line" />
+      </div>
 
-      <Card>
-        {/* Intro */}
-        <p className="p-4 sm:p-6 text-zinc-700 text-sm sm:text-base leading-relaxed">
-          I'm a Front-End Developer with 2.5 years of experience,
-          worked at{" "}
-          <span className="font-semibold text-zinc-900">
-            <a
-              className="hover:underline"
-              href="https://www.happiestminds.com/"
-            >
-              Happiest Minds Technologies
-            </a>
-          </span>{" "}
-          as a Software Engineer. I specialize in building scalable, reusable UI
-          components with a strong focus on performance, maintainability, and
-          clean architecture.
-        </p>
-
-        {/* Highlights */}
-        <div className="grid grid-cols-1 md:grid-cols-3 border-t border-slate-200">
-          <div className="p-3 sm:p-6 text-center">
-            <FaCode className="mx-auto text-emerald-500 text-xl mb-3" />
-            <h3 className="font-semibold text-zinc-900">Clean Code</h3>
-            <p className="mt-2 text-sm text-zinc-600">
-              Modular, reusable, and maintainable UI components
-            </p>
-          </div>
-
-          <div className="p-6 text-center border-t md:border-t-0 md:border-l border-slate-200">
-            <FaRocket className="mx-auto text-emerald-500 text-xl mb-3" />
-            <h3 className="font-semibold text-zinc-900">Performance</h3>
-            <p className="mt-2 text-sm text-zinc-600">
-              Optimize applications for speed and scalability
-            </p>
-          </div>
-
-          <div className="p-6 text-center border-t md:border-t-0 md:border-l border-slate-200">
-            <FaUserGroup className="mx-auto text-emerald-500 text-xl mb-3" />
-            <h3 className="font-semibold text-zinc-900">Collaboration</h3>
-            <p className="mt-2 text-sm text-zinc-600">
-              Worked closely with product, QA, and clients
-            </p>
+      <div className="reveal about-grid" ref={grid}>
+        <div>
+          <p className="about-lede">{about.lede}</p>
+          <p className="about-body">{about.body}</p>
+          <div className="about-actions">
+            {links.linkedin && (
+              <a
+                className="btn btn-secondary"
+                href={externalUrl(links.linkedin)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn ↗
+              </a>
+            )}
+            {links.github && (
+              <a
+                className="btn btn-secondary"
+                href={externalUrl(links.github)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub ↗
+              </a>
+            )}
+            {links.resume && (
+              <a className="btn btn-secondary" href={links.resume} download>
+                Résumé PDF ↗
+              </a>
+            )}
           </div>
         </div>
-      </Card>
+
+        {profile.portrait && (
+          <figure className="portrait">
+            <div className="frame">
+              <img src={profile.portrait} alt={profile.fullName} />
+            </div>
+            {profile.portraitCaption && <figcaption>{profile.portraitCaption}</figcaption>}
+          </figure>
+        )}
+      </div>
     </section>
   );
 };

@@ -1,0 +1,403 @@
+/* Admin surface — same nocturne tokens as the portfolio, denser and quieter. */
+
+.a-shell {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+.a-side {
+  border-right: 1px solid var(--line);
+  padding: 22px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+}
+.a-brand {
+  font-family: var(--font-heading);
+  font-size: 16px;
+}
+.a-brand span {
+  color: var(--color-accent);
+}
+.a-brand em {
+  display: block;
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-top: 4px;
+}
+.a-side nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.a-side nav button {
+  text-align: left;
+  font: inherit;
+  font-size: 13.5px;
+  color: var(--text-body);
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.a-side nav button:hover {
+  background: color-mix(in srgb, var(--color-text) 6%, transparent);
+}
+.a-side nav button.is-active {
+  background: color-mix(in srgb, var(--color-accent) 16%, transparent);
+  color: var(--color-accent-200);
+}
+.a-side-link {
+  margin-top: auto;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.a-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.a-bar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 32px;
+  background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.a-bar h1 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.a-bar p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.a-bar p code,
+.a-upload code {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--color-accent-300);
+}
+.a-bar button {
+  margin-left: auto;
+}
+
+.a-body {
+  padding: 28px 32px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 880px;
+}
+
+.a-foot {
+  margin-top: auto;
+  padding: 16px 32px 26px;
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+/* --- fields --- */
+.a-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.a-label {
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.a-hint {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+.a-input {
+  font: inherit;
+  font-size: 14px;
+  color: var(--color-text);
+  /* Makes the browser's native date picker (and its calendar icon) render
+     dark instead of black-on-black. */
+  color-scheme: dark;
+  background: color-mix(in srgb, var(--color-bg) 70%, var(--color-neutral-900));
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 9px 11px;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+}
+.a-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+.a-input::placeholder {
+  color: var(--text-faint);
+}
+
+.a-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.a-toggle {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13.5px;
+  color: var(--text-body);
+  cursor: pointer;
+}
+.a-toggle input {
+  accent-color: var(--color-accent);
+  width: 16px;
+  height: 16px;
+}
+
+.a-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.a-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  padding: 5px 6px 5px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-text) 8%, transparent);
+  color: var(--text-body);
+}
+.a-chip button {
+  background: transparent;
+  border: 0;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  padding: 0 2px;
+}
+.a-chip button:hover {
+  color: #ff8f8f;
+}
+
+/* --- repeater --- */
+.a-repeater {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.a-repeater-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.a-repeater-head .a-label {
+  margin-right: auto;
+}
+
+.a-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--panel);
+  overflow: hidden;
+}
+.a-card.is-open {
+  border-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+}
+.a-card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px 4px 4px;
+}
+.a-card-title {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+  font: inherit;
+  font-size: 13.5px;
+  color: var(--color-text);
+  background: transparent;
+  border: 0;
+  padding: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.a-caret {
+  color: var(--color-accent);
+  font-size: 11px;
+}
+.a-card-tools {
+  display: flex;
+  gap: 2px;
+}
+.a-card-tools button {
+  background: transparent;
+  border: 0;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 8px;
+  border-radius: 5px;
+}
+.a-card-tools button:hover {
+  background: color-mix(in srgb, var(--color-text) 8%, transparent);
+  color: var(--color-text);
+}
+.a-card-tools .a-danger:hover {
+  color: #ff8f8f;
+}
+.a-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 4px 14px 18px;
+  border-top: 1px solid var(--line-soft);
+}
+.a-card-body .a-repeater {
+  padding: 12px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-sm);
+}
+
+/* --- misc --- */
+.a-btn {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  padding: 9px 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.a-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.a-btn-primary {
+  background: var(--color-accent);
+  color: #14121f;
+}
+.a-btn-primary:not(:disabled):hover {
+  background: var(--color-accent-300);
+}
+.a-btn-secondary {
+  background: transparent;
+  border-color: color-mix(in srgb, var(--color-text) 18%, transparent);
+  color: var(--color-text);
+}
+.a-btn-secondary:hover {
+  border-color: var(--color-accent);
+}
+.a-btn-ghost {
+  background: transparent;
+  color: var(--color-accent);
+  padding: 6px 8px;
+}
+
+.a-upload {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+}
+.a-upload > div {
+  flex: 1;
+  min-width: 260px;
+}
+.a-upload strong {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 500;
+}
+.a-upload p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.a-empty {
+  font-size: 13px;
+  color: var(--text-faint);
+  margin: 0;
+}
+.a-error,
+.a-status {
+  margin: 0 32px;
+  font-size: 13px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+}
+.a-error {
+  color: #ffb4b4;
+  background: rgba(255, 90, 90, 0.12);
+  border: 1px solid rgba(255, 90, 90, 0.3);
+}
+.a-status {
+  color: var(--color-accent-200);
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 28%, transparent);
+}
+
+@media (max-width: 860px) {
+  .a-shell {
+    grid-template-columns: 1fr;
+  }
+  .a-side {
+    position: static;
+    height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .a-side nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .a-grid {
+    grid-template-columns: 1fr;
+  }
+  .a-body,
+  .a-bar {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

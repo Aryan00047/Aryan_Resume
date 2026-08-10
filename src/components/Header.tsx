@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { content, visibleCodingProfiles } from "../content";
-import Wordmark from "./Wordmark";
+import Logo from "./Logo";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -26,9 +26,7 @@ const Header = () => {
   return (
     <header className="site-header" data-open={open}>
       <div className="shell">
-        <a href="#top" className="wordmark">
-          <Wordmark />
-        </a>
+        <Logo />
 
         <nav className="site-nav">
           {nav.map((item) => (

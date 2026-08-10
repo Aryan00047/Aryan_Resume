@@ -421,6 +421,53 @@ h6 {
   padding-top: 15px;
   padding-bottom: 15px;
 }
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: auto;
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+}
+.logo:hover {
+  color: var(--color-text);
+}
+.logo-badge {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex: none;
+  border-radius: 11px;
+  background: var(--color-accent);
+  /* Same ink the primary button uses on an accent fill. */
+  color: #14121f;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s ease;
+}
+.logo:hover .logo-badge {
+  transform: scale(1.05);
+}
+.logo-word {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+.logo-word .dot {
+  color: var(--color-accent);
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-badge,
+  .logo:hover .logo-badge {
+    transition: none;
+    transform: none;
+  }
+}
+
 .wordmark {
   font-family: var(--font-heading);
   font-weight: 500;
@@ -1394,6 +1441,7 @@ a.profile-cell:hover {
   margin-top: 8px;
   font-size: 12.5px;
   color: var(--text-muted);
+  text-align: center;
 }
 
 /* ============================================================================
@@ -1573,6 +1621,11 @@ a.profile-cell:hover {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+  /* Single column here, so the fixed-width portrait would otherwise sit hard
+     against the left edge under a full-width paragraph. */
+  .portrait {
+    justify-self: center;
   }
   .cert-row {
     grid-template-columns: 1fr auto;

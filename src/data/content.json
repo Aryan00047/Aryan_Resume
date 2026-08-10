@@ -5,14 +5,14 @@
     "role": "Frontend Engineer",
     "availability": "Open to work — Frontend / Full Stack",
     "years": "2.5",
-    "headline": "I own the whole module —",
+    "headline": "I own the whole module,",
     "headlineAccent": "not just the component.",
-    "lede": "Frontend engineer, 2.5 years in React, Angular and TypeScript inside a regulated healthcare platform — shipping UI modules end to end through development, QA and release, and writing the Node/Express/MongoDB behind them when the work needs it.",
-    "locations": "India — open to Bengaluru · Pune · Noida · Gurgaon · Hyderabad",
+    "lede": "Frontend engineer, 2.5 years in React, Angular and TypeScript inside a regulated healthcare platform shipping UI modules end to end through development, QA and release, and writing the Node/Express/MongoDB behind them when the work needs it.",
+    "locations": "India, open to Bengaluru · Pune · Noida · Gurgaon · Hyderabad · Mumbai · Remote",
     "email": "aryan2k1.gupta@gmail.com",
     "phone": "+91 86998 28447",
     "portrait": "/assets/profile_pic.jpg",
-    "portraitCaption": "Aryan Gupta, Bengaluru"
+    "portraitCaption": "Aryan Gupta"
   },
   "links": {
     "linkedin": "https://www.linkedin.com/in/agupta2001/",
@@ -20,7 +20,7 @@
     "resume": "/Resume_Aryan.pdf"
   },
   "about": {
-    "lede": "I started as the person who took the tickets nobody wanted — the module with the tangled requirements, the migration everyone was postponing — and found that owning the messy half is where the work gets interesting.",
+    "lede": "I started as the person who took the tickets nobody wanted the module with the tangled requirements, the migration everyone was postponing and found that owning the messy half is where the work gets interesting.",
     "body": "Two and a half years at Happiest Minds on a WebMD healthcare platform taught me to ship carefully: compliance reviews, QA triage of up to 20 defects a release, an Angular v16→v19 migration across 15+ modules with zero post-release rollbacks. On my own time I build products end to end, because the fastest way to understand a system is to own all of it."
   },
   "contact": {
@@ -159,7 +159,7 @@
         {
           "num": "01",
           "title": "A statement is not information",
-          "body": "Bank exports arrive as a thousand undifferentiated rows. Answering “where did the month go” meant reading all of them — so the first job was turning a document into a question you can ask."
+          "body": "Bank exports arrive as a thousand undifferentiated rows. Answering “where did the month go” meant reading all of them so the first job was turning a document into a question you can ask."
         },
         {
           "num": "02",
@@ -186,7 +186,7 @@
       "bullets": [
         {
           "metric": "2 wks",
-          "text": "Owned a complete UI module end to end — development, QA fixes and UX validation — shipping two weeks ahead of schedule."
+          "text": "Owned a complete UI module end to end development, QA fixes and UX validation shipping two weeks ahead of schedule."
         },
         {
           "metric": "15+",

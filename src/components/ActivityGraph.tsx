@@ -10,6 +10,9 @@ import {
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
+/** How often an open tab re-polls the live feeds. */
+const REFRESH_MS = 60 * 60 * 1000;
+
 type Loaded = { data: Contributions | null; live: boolean };
 
 const layoutOf = (data: Contributions | null) => {
@@ -55,20 +58,52 @@ const ActivityGraph = () => {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
+    const live = sources
+      .map((source, index) => ({ source, index }))
+      .filter(({ source }) => PROVIDERS[source.provider].live);
+
+    if (!live.length) return;
+
     const controller = new AbortController();
+    let lastRun = 0;
 
-    sources.forEach((source, i) => {
-      if (!PROVIDERS[source.provider].live) return;
-      fetchActivity(source.provider, source.username, controller.signal)
-        .then((fresh) => {
-          setState((prev) => prev.map((row, j) => (j === i ? { data: fresh, live: true } : row)));
-        })
-        .catch(() => {
-          // Offline, rate-limited, or the mirror is gone — the snapshot stands.
-        });
-    });
+    const refresh = () => {
+      if (controller.signal.aborted) return;
+      // A background tab has its timers throttled and nobody is looking at the
+      // graph anyway — skip, and let the visibility handler catch up.
+      if (document.hidden) return;
 
-    return () => controller.abort();
+      lastRun = Date.now();
+      for (const { source, index } of live) {
+        fetchActivity(source.provider, source.username, controller.signal)
+          .then((fresh) => {
+            setState((prev) =>
+              prev.map((row, j) => (j === index ? { data: fresh, live: true } : row)),
+            );
+          })
+          .catch(() => {
+            // Offline, rate-limited, or the mirror is gone — the snapshot stands.
+          });
+      }
+    };
+
+    refresh();
+    const timer = window.setInterval(refresh, REFRESH_MS);
+
+    // Covers the tab that sat in the background for a day: the interval was
+    // throttled or skipped, so refresh on the way back in if it is due.
+    const onVisible = () => {
+      if (document.visibilityState === "visible" && Date.now() - lastRun >= REFRESH_MS) {
+        refresh();
+      }
+    };
+    document.addEventListener("visibilitychange", onVisible);
+
+    return () => {
+      controller.abort();
+      window.clearInterval(timer);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
   }, [sources]);
 
   const current = state[active];

@@ -1,4 +1,5 @@
 import { content, externalUrl } from "../content";
+import Prose from "./Prose";
 import { useReveal } from "../hooks/useReveal";
 
 const AboutMe = () => {
@@ -15,8 +16,8 @@ const AboutMe = () => {
 
       <div className="reveal about-grid" ref={grid}>
         <div>
-          <p className="about-lede">{about.lede}</p>
-          <p className="about-body">{about.body}</p>
+          <Prose className="about-lede" text={about.lede} />
+          <Prose className="about-body" text={about.body} />
           <div className="about-actions">
             {links.linkedin && (
               <a

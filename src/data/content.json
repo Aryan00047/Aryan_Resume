@@ -5,9 +5,9 @@
     "role": "Software Engineer(Frontend | Full Stack Developer)",
     "availability": "Open to work — Frontend / Full Stack",
     "years": "2.5",
-    "headline": "Software Engineer with 2.5 years of experience in",
-    "headlineAccent": "building production ready MERN and MEAN Stack applications",
-    "lede": "Software Engineer with 2.5 years of experience building production-grade web applications in React, Angular, and TypeScript, including hands-on backend work with Node.js, Express, and MongoDB. Owned complex UI modules end-to-end in a healthcare-regulated environment, led a major framework migration, and delivered a full-stack proof-of-concept independently. Actively seeking a Frontend or Full Stack Engineer role.",
+    "headline": "Software Engineer building production ready ",
+    "headlineAccent": "MERN and MEAN Stack applications",
+    "lede": "",
     "locations": "India, open to Bengaluru · Pune · Noida · Gurgaon · Hyderabad · Mumbai · Ahmedabad · Remote",
     "email": "aryan2k1.gupta@gmail.com",
     "phone": "+91 86998 28447",
@@ -21,7 +21,7 @@
   },
   "about": {
     "lede": "I'm a Full Stack Developer with 2+ years of experience building production-grade web applications in React, Angular, and TypeScript, with hands-on backend experience in Node.js, Express, and MongoDB.",
-    "body": "I've owned complex UI modules end to end, covering development, QA validation, and UX sign-off, in a compliance-heavy healthcare environment (Mercury Ignite, WebMD), including leading a production Angular migration (v16 to v19) across 8+ modules with zero post-release rollbacks, and redesigning a component architecture that cut duplicate code by 30% and reduced ongoing maintenance effort by roughly 10 hours a week. I've also independently designed and built a full-stack job management POC, from the React frontend through the Node/Express/MongoDB backend.\n \nI care about clean code, predictable state, and UI performance under real usage, and I enjoy working across the stack when a project calls for it."
+    "body": "I've owned complex UI modules end to end, covering development, QA validation, and UX sign-off, in a compliance-heavy healthcare environment (Mercury Ignite, WebMD), including leading a production Angular migration (v16 to v19) across 8+ modules with zero post-release rollbacks, and redesigning a component architecture that cut duplicate code by 30% and reduced ongoing maintenance effort by roughly 10 hours a week. \n\nI've also independently designed and built a full-stack job management POC, from the React frontend through the Node/Express/MongoDB backend.\n \nI care about clean code, predictable state, and UI performance under real usage, and I enjoy working across the stack when a project calls for it."
   },
   "contact": {
     "heading": "Let's talk about the role.",
@@ -99,12 +99,12 @@
       "items": [
         "React",
         "Redux",
-        "Angular v16→v19",
         "RxJS",
         "ngrx",
         "Tailwind",
         "Bootstrap",
-        "Next.js"
+        "Next.js",
+        "Angular"
       ]
     },
     {
@@ -182,23 +182,7 @@
       "liveUrl": "https://deluxe-sfogliatella-71fdc0.netlify.app/",
       "caseStudyUrl": "",
       "featured": true,
-      "beats": [
-        {
-          "num": "01",
-          "title": "A statement is not information",
-          "body": "Bank exports arrive as a thousand undifferentiated rows. Answering “where did the month go” meant reading all of them so the first job was turning a document into a question you can ask."
-        },
-        {
-          "num": "02",
-          "title": "Every bank formats it differently",
-          "body": "PDFs with merged columns, CSVs with shifting headers, dates in four dialects. The parser normalises layouts into one transaction shape and flags what it could not read instead of silently dropping it."
-        },
-        {
-          "num": "03",
-          "title": "What I would build next",
-          "body": "Recurring-charge detection, a budget you set once and get nudged against, and multi-account merging so household spend reads as one story rather than three exports."
-        }
-      ]
+      "beats": []
     }
   ],
   "experience": [
@@ -212,7 +196,7 @@
       "client": "Client — Mercury Ignite (WebMD) · Healthcare platform",
       "bullets": [
         {
-          "metric": "2 weeks",
+          "metric": "2 wks",
           "text": "Owned a UI module end to end, from development through QA and UX validation, shipping 2 weeks ahead of schedule."
         },
         {
@@ -220,7 +204,7 @@
           "text": "Migrated an Angular app from v16 to v19 across 8+ modules, adopting standalone components, signals, and the @if/@for/@track control flow."
         },
         {
-          "metric": "Saved ~10 hrs/week",
+          "metric": "~10 hrs/week",
           "text": "Built a config-driven component architecture for dynamic chart generation, cutting duplicate code 30% and saving ~10hrs/week in maintenance."
         },
         {
@@ -262,10 +246,10 @@
       "provider": "github",
       "username": "Aryan00047",
       "snapshot": {
-        "total": 90,
+        "total": 92,
         "start": "2025-09-07",
-        "levels": "1001000031100011000011000000000000000000001011120000000000000000000000000000000000000000000000000130000300000100000000000002400001000000010000002000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020100010000000000000000000000100000000000000000000000000000003100100000000000000000004100000",
-        "updatedAt": "2026-09-08"
+        "levels": "10010000311000110000110000000000000000000010111200000000000000000000000000000000000000000000000001300003000001000000000000024000010000000100000020000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000201000100000000000000000000001000000000000000000000000000000031001000000000000000000041000010",
+        "updatedAt": "2026-09-09"
       }
     }
   ]

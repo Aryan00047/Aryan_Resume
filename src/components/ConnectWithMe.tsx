@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { content, externalUrl } from "../content";
 import { useReveal } from "../hooks/useReveal";
+import Prose from "./Prose";
 
 const ConnectWithMe = () => {
   const card = useReveal();
@@ -26,7 +27,7 @@ const ConnectWithMe = () => {
         <div className="contact-grid">
           <div>
             <h2>{contact.heading}</h2>
-            <p>{contact.body}</p>
+            <Prose text={contact.body} />
             <div className="contact-links">
               {profile.email && <a href={`mailto:${profile.email}`}>{profile.email}</a>}
               {links.linkedin && (

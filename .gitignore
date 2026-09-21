@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+my_portifolio
 
 # Secrets
 recovery-codes.txt
@@ -25,3 +26,4 @@ recovery-codes.txt
 *.njsproj
 *.sln
 *.sw?
+

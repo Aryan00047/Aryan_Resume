@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { content, externalUrl, featuredProject, hostOf, otherProjects } from "../content";
 import type { Beat, Project } from "../data/schema";
 import { useReveal } from "../hooks/useReveal";
+import Prose from "./Prose";
 
 const MOCK_BARS = [5, 8, 4, 9, 6, 7, 3, 8, 5, 9, 4, 7];
 
@@ -11,7 +12,7 @@ const BeatBlock = ({ num, title, body }: Beat) => {
     <div className="reveal beat" ref={reveal}>
       <div className="beat-num">{num}</div>
       <h3>{title}</h3>
-      <p>{body}</p>
+      <Prose text={body} />
     </div>
   );
 };
@@ -22,7 +23,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
     <article className="reveal project-card" ref={reveal}>
       {project.eyebrow && <div className="work-eyebrow">{project.eyebrow}</div>}
       <h3>{project.title}</h3>
-      <p>{project.description}</p>
+      <Prose text={project.description} />
       {project.tags.length > 0 && (
         <div className="work-tags">
           {project.tags.map((tag) => (
@@ -161,7 +162,7 @@ const Work = () => {
               <div className="work-eyebrow">{featuredProject.eyebrow}</div>
             )}
             <h2>{featuredProject.title}</h2>
-            <p>{featuredProject.description}</p>
+            <Prose text={featuredProject.description} />
             {featuredProject.tags.length > 0 && (
               <div className="work-tags">
                 {featuredProject.tags.map((tag) => (

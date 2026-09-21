@@ -17,6 +17,21 @@ export const visibleCodingProfiles = content.codingProfiles.filter(
   (p) => p.name && (p.url || p.stat || p.handle),
 );
 
+/**
+ * Splits admin-entered prose into paragraphs on blank lines.
+ *
+ * A textarea's newlines are just whitespace to HTML, so `{about.body}` renders
+ * as one run-on block however it was typed. Each block becomes its own <p>;
+ * single newlines inside a block survive via `white-space: pre-line` on the
+ * prose classes.
+ */
+export const paragraphs = (text: string) =>
+  text
+    .replace(/\r\n/g, "\n")
+    .split(/\n\s*\n/)
+    .map((block) => block.trim())
+    .filter(Boolean);
+
 /** Splits a sentence into words so the hero can stagger them in. */
 export const words = (sentence: string) => sentence.split(/\s+/).filter(Boolean);
 

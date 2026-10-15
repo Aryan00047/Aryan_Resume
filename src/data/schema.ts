@@ -17,6 +17,8 @@ export type Project = {
   tags: string[];
   liveUrl: string;
   caseStudyUrl: string;
+  /** Screenshot shown on the swiper card, e.g. `/projects/my-app.png`. Optional. */
+  image: string;
   /** The first featured project gets the large sticky-preview treatment. */
   featured: boolean;
   /** Only rendered for the featured project. */
@@ -161,6 +163,7 @@ export const EMPTY_PROJECT: Project = {
   tags: [],
   liveUrl: "",
   caseStudyUrl: "",
+  image: "",
   featured: false,
   beats: [],
 };

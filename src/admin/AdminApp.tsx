@@ -112,6 +112,35 @@ const AdminApp = () => {
 
   const patch = (next: Partial<SiteContent>) => setData({ ...data, ...next });
 
+  const readAsDataUrl = (file: File) =>
+    new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result));
+      reader.onerror = () => reject(new Error("Could not read that file."));
+      reader.readAsDataURL(file);
+    });
+
+  /** Writes a project screenshot into public/projects and returns its URL path. */
+  const uploadImage = async (file: File) => {
+    setError("");
+    setStatus("Uploading image…");
+    try {
+      const res = await fetch("/__admin/image", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ filename: file.name, data: await readAsDataUrl(file) }),
+      });
+      const json = (await res.json()) as { ok: boolean; path?: string; error?: string };
+      if (!json.ok || !json.path) throw new Error(json.error ?? "Upload failed");
+      setStatus(`Image written to public${json.path} — remember to save.`);
+      return json.path;
+    } catch (e: unknown) {
+      setStatus("");
+      setError(e instanceof Error ? e.message : String(e));
+      return null;
+    }
+  };
+
   const uploadResume = async (file: File) => {
     setError("");
     setStatus("Uploading résumé…");
@@ -543,6 +572,29 @@ const AdminApp = () => {
                     onChange={(description) => update({ description })}
                   />
                   <Tags label="Tech tags" value={item.tags} onChange={(tags) => update({ tags })} />
+                  <div className="a-grid">
+                    <Text
+                      label="Screenshot path"
+                      value={item.image}
+                      onChange={(image) => update({ image })}
+                      placeholder="/projects/my-app.png"
+                      hint="Shown on the project card. Upload one, or paste a path / URL."
+                    />
+                    <label className="a-btn a-btn-secondary" style={{ alignSelf: "end" }}>
+                      Upload image
+                      <input
+                        type="file"
+                        accept="image/*"
+                        hidden
+                        onChange={(e) => {
+                          const file = e.target.files?.[0];
+                          e.target.value = "";
+                          if (!file) return;
+                          void uploadImage(file).then((image) => image && update({ image }));
+                        }}
+                      />
+                    </label>
+                  </div>
                   <div className="a-grid">
                     <Text
                       label="Live URL"

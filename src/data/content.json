@@ -181,7 +181,24 @@
       ],
       "liveUrl": "https://deluxe-sfogliatella-71fdc0.netlify.app/",
       "caseStudyUrl": "",
+      "image": "",
       "featured": true,
+      "beats": []
+    },
+    {
+      "title": "UPI Mesh Console",
+      "eyebrow": "Live",
+      "description": "Extended an offline payment simulation with RSA digital signatures, Redis-backed idempotency, bounded concurrency retries, and an Angular dashboard featuring transaction monitoring, pipeline traces, and SVG-based mesh visualizations.",
+      "tags": [
+        "Java",
+        "Spring Boot",
+        "Angular 19",
+        "Redix"
+      ],
+      "liveUrl": "https://upi-without-internet-roan.vercel.app/",
+      "caseStudyUrl": "",
+      "image": "",
+      "featured": false,
       "beats": []
     }
   ],

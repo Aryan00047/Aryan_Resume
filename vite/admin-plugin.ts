@@ -1,10 +1,11 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import type { Plugin } from "vite";
 
 const CONTENT_PATH = "src/data/content.json";
 const PUBLIC_DIR = "public";
+const IMAGE_EXTENSIONS = [".png", ".jpg", ".jpeg", ".webp", ".avif", ".gif", ".svg"];
 const MAX_BODY = 25 * 1024 * 1024; // a résumé PDF, base64-encoded, with room to spare
 
 const readBody = (req: IncomingMessage) =>
@@ -98,6 +99,42 @@ export function adminPlugin(): Plugin {
 
               await writeFile(target, Buffer.from(data.split(",").pop() ?? "", "base64"));
               send(res, 200, { ok: true, path: `/${safeName}` });
+              return;
+            }
+
+            if (url === "/image" && req.method === "POST") {
+              const body = await readBody(req);
+              const { filename, data } = JSON.parse(body) as {
+                filename?: string;
+                data?: string;
+              };
+
+              if (!data) {
+                send(res, 400, { ok: false, error: "No file data received." });
+                return;
+              }
+
+              // Same containment as the résumé route, but images live in their
+              // own folder so project shots never collide with other assets.
+              const safeName = path
+                .basename(filename ?? "project.png")
+                .replace(/[^\w.-]+/g, "-")
+                .toLowerCase();
+              if (!IMAGE_EXTENSIONS.some((ext) => safeName.endsWith(ext))) {
+                send(res, 400, { ok: false, error: "Use a PNG, JPG, WebP, AVIF, GIF or SVG image." });
+                return;
+              }
+
+              const dir = path.resolve(root, PUBLIC_DIR, "projects");
+              const target = path.resolve(dir, safeName);
+              if (!target.startsWith(dir + path.sep)) {
+                send(res, 400, { ok: false, error: "Invalid destination." });
+                return;
+              }
+
+              await mkdir(dir, { recursive: true });
+              await writeFile(target, Buffer.from(data.split(",").pop() ?? "", "base64"));
+              send(res, 200, { ok: true, path: `/projects/${safeName}` });
               return;
             }
 

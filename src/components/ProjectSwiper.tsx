@@ -120,8 +120,13 @@ const ProjectSwiper = ({ projects }: { projects: Project[] }) => {
       aria-label="Selected projects"
     >
       <div className="swiper-head">
-        <h4>{projects.length > 1 ? "Swipe through projects" : "Project"}</h4>
-        <div className="swiper-controls">
+        <h4>Selected projects</h4>
+        {projects.length > 1 && (
+          <span className="swiper-hint" aria-hidden="true">
+            Swipe <i>→</i>
+          </span>
+        )}
+        <div className="swiper-controls" hidden={projects.length < 2}>
           <span className="swiper-count" aria-live="polite">
             {String(active + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
           </span>

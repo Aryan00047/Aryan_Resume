@@ -1680,13 +1680,124 @@ a.profile-cell:hover {
     }
 }
 
+.swiper-hint {
+    display: none;
+}
+
+@keyframes swiper-nudge {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+}
+
 @media (max-width: 640px) {
-    .project-slide {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 28px;
+    /* Edge-to-edge track so the next card peeks in — that peek is what tells
+       people the row scrolls sideways. */
+    .swiper-track {
+        gap: 14px;
+        margin-inline: calc(var(--gutter) * -1);
+        padding-inline: var(--gutter);
+        scroll-padding-inline: var(--gutter);
+        border-radius: 0;
     }
-    .swiper-count {
+
+    .project-slide {
+        flex-basis: 88%;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+        padding: 0;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        background: var(--panel);
+        overflow: hidden;
+        align-items: stretch;
+    }
+
+    .project-slide:only-child {
+        flex-basis: 100%;
+    }
+
+    /* Preview first, copy underneath, as a single card. */
+    .project-slide > .browser,
+    .project-slide > .project-slide-media {
+        order: -1;
+        border-radius: 0;
+        box-shadow: none;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .project-slide .browser-body {
+        height: 190px;
+        --preview-scale: 0.3;
+    }
+
+    .project-slide .browser-open span {
+        font-size: 11.5px;
+        padding: 6px 12px;
+    }
+
+    .project-slide-copy {
+        padding: 18px 18px 20px;
+    }
+
+    .project-slide h3 {
+        font-size: 24px;
+        margin-top: 8px;
+    }
+
+    .project-slide p {
+        font-size: 14.5px;
+        margin-top: 10px;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .project-slide .work-tags {
+        margin-top: 14px;
+    }
+
+    .project-slide .work-actions {
+        margin-top: 18px;
+    }
+
+    /* Arrows are a desktop affordance; on touch the hint + dots do the job. */
+    .swiper-controls {
         display: none;
+    }
+
+    .swiper-hint {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        color: var(--color-accent);
+    }
+
+    .swiper-hint i {
+        font-style: normal;
+        animation: swiper-nudge 1.4s ease-in-out infinite;
+    }
+
+    .swiper-dots {
+        gap: 4px;
+    }
+
+    /* 8px dots are too small to hit — pad the target, keep the dot small. */
+    .swiper-dots button {
+        position: relative;
+    }
+
+    .swiper-dots button::after {
+        content: "";
+        position: absolute;
+        inset: -12px -4px;
+    }
+}
+
+@media (max-width: 640px) and (prefers-reduced-motion: reduce) {
+    .swiper-hint i {
+        animation: none;
     }
 }
 

@@ -5,7 +5,6 @@ import AboutMe from "./components/AboutMe";
 import Certifications from "./components/Certifications";
 import CodingProfiles from "./components/CodingProfiles";
 import ConnectWithMe from "./components/ConnectWithMe";
-import CursorGlow from "./components/CursorGlow";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HomePage from "./components/HomePage";
@@ -22,11 +21,10 @@ function App() {
   return (
     <div className="page">
       <Loader />
-      <CursorGlow />
       <Header />
       <HomePage />
-      <Work />
       <WorkExp />
+      <Work />
       <Skills />
       <CodingProfiles />
       <Certifications />

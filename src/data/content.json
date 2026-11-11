@@ -7,12 +7,37 @@
     "years": "2.5",
     "headline": "Software Engineer building production ready ",
     "headlineAccent": "MERN and MEAN Stack applications",
-    "lede": "",
+    "lede": "Frontend-leaning full stack engineer. I shipped UI modules for WebMD's Mercury Ignite platform, moved its Angular app from v16 to v19, and built a job management system on React, Node.js and MongoDB.",
     "locations": "India, open to Bengaluru · Pune · Noida · Gurgaon · Hyderabad · Mumbai · Ahmedabad · Remote",
     "email": "aryan2k1.gupta@gmail.com",
     "phone": "+91 86998 28447",
     "portrait": "/assets/profile_pic.jpg",
-    "portraitCaption": "Aryan Gupta"
+    "portraitCaption": "Aryan Gupta",
+    "highlights": [
+      {
+        "value": "8+",
+        "label": "Angular modules moved from v16 to v19"
+      },
+      {
+        "value": "30%",
+        "label": "less duplicate code in chart components"
+      },
+      {
+        "value": "2 wks",
+        "label": "ahead of schedule on an owned UI module"
+      },
+      {
+        "value": "12+",
+        "label": "modules covered by Karma and Playwright tests"
+      }
+    ],
+    "coreStack": [
+      "React",
+      "Angular",
+      "TypeScript",
+      "Node.js",
+      "MongoDB"
+    ]
   },
   "links": {
     "linkedin": "https://www.linkedin.com/in/agupta2001/",
@@ -20,12 +45,12 @@
     "resume": "/Resume_Aryan.pdf"
   },
   "about": {
-    "lede": "I'm a Full Stack Developer with 2+ years of experience building production-grade web applications in React, Angular, and TypeScript, with hands-on backend experience in Node.js, Express, and MongoDB.",
-    "body": "I've owned complex UI modules end to end, covering development, QA validation, and UX sign-off, in a compliance-heavy healthcare environment (Mercury Ignite, WebMD), including leading a production Angular migration (v16 to v19) across 8+ modules with zero post-release rollbacks, and redesigning a component architecture that cut duplicate code by 30% and reduced ongoing maintenance effort by roughly 10 hours a week. \n\nI've also independently designed and built a full-stack job management POC, from the React frontend through the Node/Express/MongoDB backend.\n \nI care about clean code, predictable state, and UI performance under real usage, and I enjoy working across the stack when a project calls for it."
+    "lede": "I'm a full stack developer with 2+ years of experience building production web applications in React, Angular and TypeScript, plus backend work in Node.js, Express and MongoDB.",
+    "body": "I've owned UI modules end to end at Mercury Ignite (WebMD), a healthcare platform with heavy compliance requirements. That covered development, QA validation and UX sign-off. I also led the Angular migration from v16 to v19 across 8+ modules with zero post-release rollbacks, and redesigned a component architecture that cut duplicate code by 30% and saved roughly 10 hours a week in maintenance.\n\nOn my own, I designed and built a full-stack job management POC, from the React frontend to the Node, Express and MongoDB backend.\n\nI care about clean code, predictable state and UI performance under real usage. I'm happy to work across the stack when a project needs it."
   },
   "contact": {
     "heading": "Let's talk about the role.",
-    "body": "Open to frontend / full-stack positions, and to freelance opportunities."
+    "body": "Open to frontend and full-stack roles, and to freelance work."
   },
   "bootLines": [
     {
@@ -188,7 +213,7 @@
     {
       "title": "UPI Mesh Console",
       "eyebrow": "Live",
-      "description": "Extended an offline payment simulation with RSA digital signatures, Redis-backed idempotency, bounded concurrency retries, and an Angular dashboard featuring transaction monitoring, pipeline traces, and SVG-based mesh visualizations.",
+      "description": "Extended an offline payment simulation with RSA digital signatures, Redis-backed idempotency and bounded concurrency retries, and added an Angular dashboard for transaction monitoring, pipeline traces and SVG mesh visualizations.",
       "tags": [
         "Java",
         "Spring Boot",
@@ -206,7 +231,7 @@
     {
       "org": "Happiest Minds",
       "orgUrl": "https://www.happiestminds.com/",
-      "role": "Frontend Engineer",
+      "role": "Software Engineer",
       "location": "Bengaluru, India",
       "start": "Aug 2023",
       "end": "Dec 2025",

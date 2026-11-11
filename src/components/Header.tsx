@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { content, visibleCodingProfiles } from "../content";
 import Logo from "./Logo";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -36,7 +37,9 @@ const Header = () => {
           ))}
         </nav>
 
-        <a className="btn btn-primary" href="#contact" style={{ padding: "8px 15px" }}>
+        <ThemeToggle />
+
+        <a className="btn btn-primary site-cta" href="#contact" style={{ padding: "8px 15px" }}>
           Get in touch
         </a>
 

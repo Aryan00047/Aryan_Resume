@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { content } from "../content";
 
-/** Boot-sequence overlay that lifts after ~1.6s. */
+/** Boot-sequence overlay that lifts after ~0.9s. */
 const Loader = () => {
   const barRef = useRef<HTMLDivElement>(null);
   const [done, setDone] = useState(false);
@@ -14,7 +14,7 @@ const Loader = () => {
       if (progress >= 100) window.clearInterval(tick);
     }, 210);
 
-    const lift = window.setTimeout(() => setDone(true), 1600);
+    const lift = window.setTimeout(() => setDone(true), 900);
 
     return () => {
       window.clearInterval(tick);

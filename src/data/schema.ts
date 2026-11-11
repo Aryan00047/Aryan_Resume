@@ -131,6 +131,10 @@ export type SiteContent = {
     phone: string;
     portrait: string;
     portraitCaption: string;
+    /** Proof numbers shown under the hero. Optional. */
+    highlights?: { value: string; label: string }[];
+    /** Short stack list for the hero summary card. Optional. */
+    coreStack?: string[];
   };
   links: {
     linkedin: string;

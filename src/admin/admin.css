@@ -311,7 +311,7 @@
 }
 .a-btn-primary {
   background: var(--color-accent);
-  color: #14121f;
+  color: #14110d;
 }
 .a-btn-primary:not(:disabled):hover {
   background: var(--color-accent-300);

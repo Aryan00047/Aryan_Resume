@@ -259,7 +259,7 @@ const AdminApp = () => {
                 label="Headline (accent)"
                 value={data.profile.headlineAccent}
                 onChange={(v) => patch({ profile: { ...data.profile, headlineAccent: v } })}
-                hint="Second half, in purple. Both animate in word by word."
+                hint="Second half, in the accent color. Both animate in word by word."
               />
               <Area
                 label="Hero paragraph"
@@ -702,7 +702,7 @@ const AdminApp = () => {
                           value={bullet.metric}
                           onChange={(metric) => updateBullet({ metric })}
                           placeholder="15+"
-                          hint="The purple number on the left. Keep it short."
+                          hint="The accent-colored number on the left. Keep it short."
                         />
                         <Area
                           label="Achievement"
